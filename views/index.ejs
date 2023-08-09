@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I AM BATMAN!</title>
+</head>
+<body>
+    <h1>I AM BATMAN!</h1>
+    <form action="/actors" method="POST">
+        <input type="text" placeholder="Actor Name" name="name" />
+        <input type="text" placeholder="Movie" name="movie" />
+        <input type="number" placeholder="Year" name="year" />
+        <button type="submit">Submit</button>
+    </form>
+    <ul class="actors">
+        <% for (let i = 0; i < actors.length; i++) {%>
+            <li class="actor">
+                <span><%= actors[i].name %></span>
+                <span><%= actors[i].movie %></span>
+                <span><%= actors[i].year %></span>
+            </li>
+        <% } %>
+    </ul>
+    <div>
+        <h2>Ben Affleck Era!</h2>
+        <p>Replace Christian Bale movies with Ben Affleck Movies</p>
+        <button id="update-button">Replace Christian Bale's Movies</button>
+    </div>
+    <div>
+        <h2>Remove Ben Affleck!</h2>
+        <p>
+            Delete one Ben Affleck movie. Does nothing if there are no more Ben Affleck movies.
+        </p>
+        <button id="delete-button">Delete Ben Affleck's movie</button>
+    </div>
+    <div id="message"></div>
+    <script src="/main.js"></script>
+</body>
+</html>
